@@ -1,69 +1,87 @@
-# :strawberry: Strawberry Music Player [![Build Status](https://github.com/strawberrymusicplayer/strawberry/actions/workflows/build.yaml/badge.svg?branch=master)](https://github.com/strawberrymusicplayer/strawberry/actions)
-[![Sponsor](https://img.shields.io/badge/-Sponsor-green?logo=github)](https://github.com/sponsors/jonaski)
-[![Patreon](https://img.shields.io/badge/patreon-donate-green.svg)](https://patreon.com/jonaskvinge)
-[![PayPal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/jonaskvinge)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SSOROZCO/files/refs/heads/main/Strawberry-Roon.svg" width="220" alt="Strawberry-Roon">
+</p>
 
-Strawberry is a **music player and music collection organizer**, originally forked from *Clementine* in 2018.
-It’s written in **C++ using the Qt framework**, designed for **audiophiles and music collectors**.
+<h1 align="center">Strawberry Astra - Roon Edition</h1>
 
-![Screenshot of Strawberry Music Player](https://raw.githubusercontent.com/strawberrymusicplayer/strawberry/master/data/screenshot/screenshot.png)
+<p align="center">
+A Roon-inspired, audiophile visual refresh for Strawberry Music Player — Astra SE ready
+</p>
 
----
+<p align="center"></p>
 
-## :globe_with_meridians: Resources
+[![Build Status](https://github.com/SSOROZCO/Strawberry-Astra/actions/workflows/build.yaml/badge.svg?branch=master)](https://github.com/SSOROZCO/Strawberry-Astra/actions)
 
-- **Website:** https://www.strawberrymusicplayer.org
-- **Wiki:** https://wiki.strawberrymusicplayer.org
-- **Forum:** https://forum.strawberrymusicplayer.org
-- **GitHub:** https://github.com/strawberrymusicplayer/strawberry
-- **Latest builds:** https://builds.strawberrymusicplayer.org
-- **openSUSE Build Service:**
-  - Stable: https://build.opensuse.org/package/show/home:jonaski:strawberry/strawberry
-  - Unstable: https://build.opensuse.org/package/show/home:jonaski:strawberry-dev/strawberry
-- **Ubuntu PPAs:**
-  - Stable: https://launchpad.net/~jonaski/+archive/ubuntu/strawberry
-  - Unstable: https://launchpad.net/~jonaski/+archive/ubuntu/strawberry-unstable
-- **Translations:** https://crowdin.com/project/strawberrymusicplayer
+[![Sponsor](https://img.shields.io/badge/-Sponsor-green?logo=github)](https://github.com/sponsors/SSOROZCO)
+[![Patreon](https://img.shields.io/badge/patreon-donate-green.svg)](https://www.patreon.com/cw/SergioSebastianOrozco)
+[![PayPal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/cineflix)
 
----
+**Base:** Strawberry 1.2.26 official | **Current:** 1.2.26-r2 FINAL TRUE | **Binary:** `strawberry` | **Theme:** Roon #101114 + #C1272D
 
-## :warning: Opening an Issue
+Inspired by Roon's editorial layout and the restrained, dark palette of Astra Linux Special Edition, Strawberry Astra modernizes Strawberry's appearance while preserving 100% of its engine, performance and audiophile features.
 
-Before creating a new GitHub issue:
+Originally forked from Clementine in 2018, Strawberry is developed in C++ / Qt 6 / GStreamer. Astra does not remove features or imitate other players — it delivers a cleaner, more contemporary, listening-room identity.
 
-1. **Read the [FAQ](https://wiki.strawberrymusicplayer.org/wiki/FAQ)**.
-2. **Search existing issues** to avoid duplicates. If one already exists, comment there with any additional information.
-3. **Use the [forum](https://forum.strawberrymusicplayer.org/)** for technical problems, discussions or feature suggestions — it’s better suited for back-and-forth conversation.
-4. **Feature requests are not accepted on GitHub.** Issues created for feature requests will be closed. You can still discuss ideas on the forum.
-5. **Flatpak users:** We do **not** maintain the Flatpak package. Report Flatpak-specific issues via [Flatpak support](https://flatpak.org/about/).
+![Screenshot of Strawberry Music Player](https://raw.githubusercontent.com/SSOROZCO/files/refs/heads/main/Screenshot_20260803_231109.png)
 
 ---
+## Project Vision
 
-## :moneybag: Sponsoring
+The initiative began with a simple idea: to refresh Strawberry's interface without altering the qualities that make it exceptional. While early inspiration came from Roon's clean layout, the final design direction was guided by the minimalist environment of Astra Linux Special Edition.
 
-Strawberry is **free software released under the GPL**.
-If you enjoy using it, please consider **supporting development** through sponsorship or donation.
+### Objectives
+- Modernise the interface while maintaining simplicity and speed
+- Preserve bit-perfect playback, lightweight performance and stability
+- Ensure functional consistency across all elements
+- Refine visual coherence with updated icons and Roon analyzers
+- Respect the original project and its philosophy — **The UI changes. The engine does not.**
 
-**Sponsorship options:**
-1. [Patreon](https://www.patreon.com/jonaskvinge)
-2. [GitHub](https://github.com/sponsors/jonaski)
-3. [Ko-fi](https://ko-fi.com/jonaskvinge)
-4. [PayPal](https://paypal.me/jonaskvinge)
+### Design Philosophy
+- Keep Strawberry fast, lightweight and stable
+- Roon Black #101114 surfaces with Roon Red #C1272D accent
+- More space, better rhythm, real typography hierarchy
+- Blend naturally with modern dark desktops
+- Honour Strawberry upstream
 
-Supporting open-source developers helps ensure continued maintenance and improvements.
+## ✨ What’s New in Astra R2 FINAL TRUE (1.2.26-r2)
 
----
+This is not just icons. R2 is a full Roon Edition:
 
-## :white_check_mark: Features
+**Visual System:**
+- Full Roon QSS theme `data/roon.qss` — dark #101114, red accent #C1272D, rounded cards, slim scrollbars, pill-style selection
+- New minimalist icon set (220px SVG source), adapted to Roon style
+- Larger artwork in Now Playing (300px+), rounded corners, editorial metadata hierarchy
+- Sidebar reworked: glossy gradient removed, neutral panel + rounded pill active state
+- Improved spacing and padding across queue, playlist and player controls
+- More intuitive layout — clearer grouping, less clutter
+
+**Audio Intelligence UI:**
+- **Hi-Res badge:** Now Playing shows if track is Hi-Res (FLAC 24/96+, DSD, etc.)
+- **DAC detection:** Shows detected DAC / output device info in context
+- **Roon Analyzer:** New `roonanalyzer.cpp` — Roon-style spectrum with #C1272D
+- **Dorrough Analyzer:** `dorroughanalyzer.cpp` — professional loudness metering
+- **Rainbow / Turbine / Boom analyzers** refined with Roon palette
+
+**Engineering:**
+- Version system fixed: follows official cycle `-r1`, `-r2` — now `1.2.26-r2` everywhere (no more hash `9b6d4a7a`)
+- Binary name kept as `strawberry` to preserve config `~/.config/strawberry`, collection DB, MPRIS `org.mpris.MediaPlayer2.strawberry`
+- Astra Linux SE integration tested
+- Clean build: `build/` ignored via `.gitignore`, reproducible .deb
+
+**Identity:**
+- Window title, About dialog and launcher show *Strawberry Astra - Roon Edition*
+- Internal IDs unchanged for config continuity
+
+## :white_check_mark: Features (100% Strawberry preserved)
 
 - Play and organize your music collection
 - Support for WAV, FLAC, Ogg FLAC, WavPack, Ogg Vorbis, Opus, Ogg Speex, MPC, TrueAudio, AIFF, MP4/AAC, ALAC, MP3, ASF, Monkey’s Audio, and DSD (DSF/DSDIFF)
 - Bit-perfect playback on Linux
 - MPRIS2 / D-Bus remote control on Linux
 - Native desktop notifications
-- Advanced playlist management
-- Smart and dynamic playlists
-- Audio analyzer, equalizer, moodbar, and waveform seek bar
+- Advanced playlist management, smart and dynamic playlists
+- Audio analyzer, equalizer, moodbar, and waveform seek bar — now with Roon & Dorrough analyzers
+- Hi-Res detection and DAC info display (Astra exclusive UI)
 - Volume normalization with ReplayGain and EBU R128 loudness analysis
 - Editing tags, and fetching missing tags via acoustic fingerprinting using [AcoustID](https://acoustid.org/) and [MusicBrainz](https://musicbrainz.org/)
 - Album cover art from: [Last.fm](https://www.last.fm/), [MusicBrainz](https://musicbrainz.org/), [Discogs](https://www.discogs.com/), [Musixmatch](https://www.musixmatch.com/), [Deezer](https://www.deezer.com/), [Tidal](https://www.tidal.com/), [Qobuz](https://www.qobuz.com/), [Spotify](https://www.spotify.com/)
@@ -79,17 +97,13 @@ Supporting open-source developers helps ensure continued maintenance and improve
 - Unofficial Tidal, Spotify, and Qobuz integration
 
 ---
-
-:white_check_mark: Tested on **Linux**, **OpenBSD**, **FreeBSD**, **macOS**, and **Windows**.
-
-> **Note:** macOS and Windows releases are currently **available to sponsors only**.
-> A monthly sponsorship via [Patreon](https://www.patreon.com/jonaskvinge) grants direct access to new releases.
+:white_check_mark: Tested on **Linux / Astra Linux Special Edition**.
 
 ---
 
 ## :gear: Requirements
 
-To build Strawberry from source, you’ll need:
+To build Strawberry Astra from source, you’ll need:
 
 **Dependencies:**
 - [CMake 3.13 or higher](https://cmake.org/)
@@ -105,36 +119,19 @@ To build Strawberry from source, you’ll need:
 - [ICU](https://unicode-org.github.io/icu/)
 - [KDSingleApplication 1.1.0 or higher](https://github.com/KDAB/KDSingleApplication)
 
-**Dependencies for optional features:**
-- Fingerprinting & tagging: [Chromaprint](https://acoustid.org/chromaprint)
-- Fast Spectrum Moodbar: [FFTW3](http://www.fftw.org/)
-- PulseAudio integration: [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/)
-- Audio CD support: [libcdio](https://www.gnu.org/software/libcdio/)
-- MTP devices: [libmtp](http://libmtp.sourceforge.net/)
-- iPod Classic: [libgpod](http://www.gtkpod.org/libgpod/)
-- EBU R128 normalization: [libebur128](https://github.com/jiixyj/libebur128)
-
-Also install GStreamer plugins **base**, **good**, and optionally **bad**, **ugly** and **libav** for full codec support.
+**Optional:**
+- Chromaprint, FFTW3, PulseAudio, libcdio, libmtp, libgpod, libebur128
+- GStreamer plugins base, good, and optionally bad, ugly and libav
 
 ---
 
-## :wrench: Build from Source
+## 🔧 Build from Source
 
-**Get the code:**
-
-    git clone --recursive https://github.com/strawberrymusicplayer/strawberry
-
-**Build and install:**
-
-    cd strawberry
-    cmake -S . -B build
-    cmake --build build --parallel $(nproc)
-    sudo cmake --install build
-
-For building on Windows with Visual Studio 2022, see: :point_right: https://github.com/strawberrymusicplayer/strawberry-msvc-build-tools
-
----
-
-## :package: Packaging status
-
-[![Packaging status](https://repology.org/badge/vertical-allrepos/strawberry.svg?columns=3&header=Strawberry&exclude_unsupported=1)](https://repology.org/metapackage/strawberry/versions)
+```bash
+git clone --recursive https://github.com/SSOROZCO/Strawberry-Astra.git
+cd Strawberry-Astra
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+cmake --build build --parallel $(nproc)
+./build/strawberry --version
+# Strawberry 1.2.26-r2
+sudo cmake --install build
