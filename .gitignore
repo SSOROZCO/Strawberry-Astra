@@ -1,6 +1,5 @@
 build/
 *.deb
-*.o
 pkg-strawberry/
+CMakeCache.txt
 .DS_Store
-.vscode/
