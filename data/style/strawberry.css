@@ -1,0 +1,65 @@
+/* --- ESTILO ROON MINIMAL (POR SSOROZCO) --- */
+
+/* Lista de reproducción principal */
+#playlist {
+  background-color: #111416;          /* Gris oscuro profundo de Roon */
+  alternate-background-color: #1A1D20;/* Gris intermedio para filas alternas */
+  color: #E1E2E3;                     /* Blanco suave anti-fatiga */
+}
+
+/* 🚫 Matamos las fresas de fondo por completo para dar seriedad */
+#playlist[default_background_enabled = "true"] {
+  background-image: none;
+}
+
+#playlist[strawbs_background_enabled = "true"] {
+  background-image: none;
+}
+
+/* Paneles de contexto, información y scroll (Look unificado) */
+#context-layout-container,
+#context-widget-scrollarea,
+#context-layout-scrollarea,
+#context-scrollarea {
+  background-color: #111416;
+}
+
+/* Botones de menú de la barra de herramientas (Adiós relieves plásticos) */
+QToolButton[accessibleName="MenuPopupToolButton"] {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 4px;
+  background-color: transparent;
+  color: #E1E2E3;
+}
+
+/* Hover: Al pasar el mouse, un sutil resaltado gris oscuro */
+QToolButton:hover[accessibleName="MenuPopupToolButton"] {
+  border: 1px solid #2E3236;
+  background-color: #1A1D20;
+}
+
+/* Pressed: Al hacer clic, el acento dorado clásico de Roon en el texto o fondo sutil */
+QToolButton:pressed[accessibleName="MenuPopupToolButton"] {
+  border: 1px solid #C19A6B;
+  background-color: #2E3236;
+}
+
+/* Ajustes de padding para compatibilidad de menús */
+QToolButton[popupMode="MenuButtonPopup"][accessibleName="MenuPopupToolButton"],
+QToolButton:hover[popupMode="MenuButtonPopup"][accessibleName="MenuPopupToolButton"],
+QToolButton:pressed[popupMode="MenuButtonPopup"][accessibleName="MenuPopupToolButton"] {
+  padding-right: 16px;
+}
+
+/* For backwards compatibility with Qt 5 as it does not support property name */
+QToolButton[popupMode="1"][accessibleName="MenuPopupToolButton"],
+QToolButton:hover[popupMode="1"][accessibleName="MenuPopupToolButton"],
+QToolButton:pressed[popupMode="1"][accessibleName="MenuPopupToolButton"] {
+  padding-right: 16px;
+}
+
+QToolButton::menu-button[accessibleName="MenuPopupToolButton"] {
+  width: 16px;
+  border: none;
+}

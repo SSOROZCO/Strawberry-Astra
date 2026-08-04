@@ -1,0 +1,19 @@
+ignore:
+  pattern:
+  - README.md
+  - Changelog
+  - COPYING
+  - CMakeLists.txt
+  - cmake_uninstall.cmake.in
+  - .clang-format
+  - .gitignore
+  - .github
+  - /debian/
+  - /cmake/
+  - /data/
+  - /dist/
+
+  suffixes:
+  - jpg
+  - png
+  - gif

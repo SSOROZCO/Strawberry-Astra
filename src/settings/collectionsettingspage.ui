@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CollectionSettingsPage</class>
+ <widget class="QWidget" name="CollectionSettingsPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>604</width>
+    <height>1112</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Collection</string>
+  </property>
+  <layout class="QVBoxLayout" name="layout_collectionsettingspage">
+   <item>
+    <widget class="QLabel" name="label_collection_folders">
+     <property name="text">
+      <string>These folders will be scanned for music to make up your collection</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layout_collection_folders">
+     <item>
+      <widget class="QListView" name="list">
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
+       <property name="uniformItemSizes">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="layout_collection_folder_buttons">
+       <item>
+        <widget class="QPushButton" name="add_directory">
+         <property name="text">
+          <string>Add new folder...</string>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="remove_directory">
+         <property name="text">
+          <string>Remove folder</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="spacer_collection_buttons">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupbox_updating">
+     <property name="title">
+      <string>Automatic updating</string>
+     </property>
+     <layout class="QVBoxLayout" name="layout_updating">
+      <item>
+       <widget class="QCheckBox" name="startup_scan">
+        <property name="text">
+         <string>Update the collection when Strawberry starts</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="monitor">
+        <property name="text">
+         <string>Monitor the collection for changes</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="song_tracking">
+        <property name="text">
+         <string>Song fingerprinting and tracking</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="mark_songs_unavailable">
+        <property name="text">
+         <string>Mark disappeared songs unavailable</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="song_ebur128_loudness_analysis">
+        <property name="text">
+         <string>Perform song EBU R 128 analysis (required for EBU R 128 loudness normalization)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_expire_unavailable_songs_after">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Expire unavailable songs after</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="expire_unavailable_songs_days">
+           <property name="maximum">
+            <number>365</number>
+           </property>
+           <property name="value">
+            <number>60</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_expire_unavailable_songs_days">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>days</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="spacer_expire_unavailable_songs">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_preferred_cover_filenames">
+        <property name="text">
+         <string>Preferred album art filenames (comma separated)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="cover_art_patterns">
+        <property name="toolTip">
+         <string>When looking for album art Strawberry will first look for picture files that contain one of these words.
+If there are no matches then it will use the largest image in the directory.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupbox_display">
+     <property name="title">
+      <string>Display options</string>
+     </property>
+     <layout class="QVBoxLayout" name="layout_display">
+      <item>
+       <widget class="QCheckBox" name="auto_open">
+        <property name="text">
+         <string>Automatically open single categories in the collection tree</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="show_dividers">
+        <property name="text">
+         <string>Show dividers</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="pretty_covers">
+        <property name="text">
+         <string>Show album cover art in collection</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="various_artists">
+        <property name="text">
+         <string>Use various artists for compilation albums</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkbox_skip_articles_for_artists">
+        <property name="text">
+         <string>Skip leading articles (&quot;the&quot;, &quot;a&quot;, &quot;an&quot;) when sorting artists, composers and performers</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkbox_skip_articles_for_albums">
+        <property name="text">
+         <string>Skip leading articles (&quot;the&quot;, &quot;a&quot;, &quot;an&quot;) when sorting albums</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkbox_use_sort_tags">
+        <property name="text">
+         <string>Use sort tags for sorting when available</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupbox_albumcovercache">
+     <property name="title">
+      <string>Album cover pixmap cache</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QGridLayout" name="layout_cache_size">
+        <item row="0" column="2">
+         <widget class="QSpinBox" name="spinbox_cache_size">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="maximum">
+           <number>1048576</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_cache_size">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Size</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QComboBox" name="combobox_cache_size">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <spacer name="spacer_cache_size">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="layout_disk_cache">
+        <item>
+         <widget class="QCheckBox" name="checkbox_disk_cache">
+          <property name="text">
+           <string>Enable Disk Cache</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacer_disk_cache">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="layout_disk_cache_size">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_disk_cache_size">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Disk Cache Size</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QComboBox" name="combobox_disk_cache_size">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QSpinBox" name="spinbox_disk_cache_size">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="maximum">
+           <number>1048576</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <spacer name="spacer_disk_cache_size">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_disk_cache_in_use">
+          <property name="text">
+           <string>Current disk cache in use:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="disk_cache_in_use">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="button_clear_disk_cache">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Clear Disk Cache</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacer_disk_cache_in_use">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupbox_song_playcounts_and_ratings">
+     <property name="title">
+      <string>Song playcounts and ratings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QCheckBox" name="checkbox_save_playcounts">
+        <property name="text">
+         <string>Save playcounts to song tags when possible</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkbox_save_ratings">
+        <property name="text">
+         <string>Save ratings to song tags when possible</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkbox_overwrite_playcount">
+        <property name="text">
+         <string>Overwrite database playcount when songs are re-read from disk</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkbox_overwrite_rating">
+        <property name="text">
+         <string>Overwrite database rating when songs are re-read from disk</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="layout_statistics_button">
+        <item>
+         <widget class="QPushButton" name="button_save_stats">
+          <property name="text">
+           <string>Save playcounts and ratings to files now</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacer_save_stats">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_delete_files">
+     <property name="text">
+      <string>Enable delete files in the right click context menu</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>list</tabstop>
+  <tabstop>add_directory</tabstop>
+  <tabstop>remove_directory</tabstop>
+  <tabstop>startup_scan</tabstop>
+  <tabstop>monitor</tabstop>
+  <tabstop>song_tracking</tabstop>
+  <tabstop>mark_songs_unavailable</tabstop>
+  <tabstop>song_ebur128_loudness_analysis</tabstop>
+  <tabstop>expire_unavailable_songs_days</tabstop>
+  <tabstop>cover_art_patterns</tabstop>
+  <tabstop>auto_open</tabstop>
+  <tabstop>show_dividers</tabstop>
+  <tabstop>pretty_covers</tabstop>
+  <tabstop>various_artists</tabstop>
+  <tabstop>checkbox_skip_articles_for_artists</tabstop>
+  <tabstop>checkbox_skip_articles_for_albums</tabstop>
+  <tabstop>spinbox_cache_size</tabstop>
+  <tabstop>combobox_cache_size</tabstop>
+  <tabstop>checkbox_disk_cache</tabstop>
+  <tabstop>spinbox_disk_cache_size</tabstop>
+  <tabstop>combobox_disk_cache_size</tabstop>
+  <tabstop>button_clear_disk_cache</tabstop>
+  <tabstop>checkbox_save_playcounts</tabstop>
+  <tabstop>checkbox_save_ratings</tabstop>
+  <tabstop>checkbox_overwrite_playcount</tabstop>
+  <tabstop>checkbox_overwrite_rating</tabstop>
+  <tabstop>button_save_stats</tabstop>
+  <tabstop>checkbox_delete_files</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

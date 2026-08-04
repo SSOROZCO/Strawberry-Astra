@@ -1,0 +1,447 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: strawberry
+Upstream-Contact: Jonas Kvinge <jonas@jkvinge.net>
+Source: https://github.com/strawberrymusicplayer/strawberry
+
+Files: *
+Copyright: 2010-2015, David Sansome <me@davidsansome.com>
+           2012-2014, 2017-2024 Jonas Kvinge <jonas@jkvinge.net>
+License: GPL-3+
+
+Files: src/utilities/timeconstants.h
+       src/core/logging.cpp
+       src/core/logging.h
+Copyright: 2011, 2012, David Sansome <me@davidsansome.com>
+           2018-2022, Jonas Kvinge <jonas@jkvinge.net>
+License: Apache-2.0
+
+Files: src/core/main.h
+       src/core/iconloader.cpp
+       src/core/iconloader.h
+       src/core/iconmapper.h
+       src/context/contextview.cpp
+       src/context/contextview.h
+       src/context/contextalbum.cpp
+       src/context/contextalbum.h
+       src/engine/alsadevicefinder.cpp
+       src/engine/alsadevicefinder.h
+       src/engine/alsapcmdevicefinder.cpp
+       src/engine/alsapcmdevicefinder.h
+       src/engine/mmdevicefinder.cpp
+       src/engine/mmdevicefinder.h
+       src/engine/uwpdevicefinder.cpp
+       src/engine/uwpdevicefinder.h
+       src/engine/devicefinder.cpp
+       src/engine/devicefinder.h
+       src/engine/enginedevice.cpp
+       src/engine/enginedevice.h
+       src/engine/enginemetadata.cpp
+       src/engine/enginemetadata.h
+       src/streaming/streamingservice.cpp
+       src/streaming/streamingservice.h
+       src/streaming/streamingtabsview.cpp
+       src/streaming/streamingtabsview.h
+       src/streaming/streamingsongsview.cpp
+       src/streaming/streamingsongsview.h
+       src/settings/backendsettingspage.cpp
+       src/settings/backendsettingspage.h
+       src/settings/coverssettingspage.cpp
+       src/settings/coverssettingspage.h
+       src/settings/lyricssettingspage.cpp
+       src/settings/lyricssettingspage.h
+       src/settings/scrobblersettingspage.cpp
+       src/settings/scrobblersettingspage.h
+       src/settings/subsonicsettingspage.cpp
+       src/settings/subsonicsettingspage.h
+       src/settings/tidalsettingspage.cpp
+       src/settings/tidalsettingspage.h
+       src/settings/spotifysettingspage.cpp
+       src/settings/spotifysettingspage.h
+       src/covermanager/jsoncoverprovider.cpp
+       src/covermanager/jsoncoverprovider.h
+       src/covermanager/lastfmcoverprovider.cpp
+       src/covermanager/lastfmcoverprovider.h
+       src/covermanager/musicbrainzcoverprovider.cpp
+       src/covermanager/musicbrainzcoverprovider.h
+       src/covermanager/deezercoverprovider.cpp
+       src/covermanager/deezercoverprovider.h
+       src/covermanager/tidalcoverprovider.cpp
+       src/covermanager/tidalcoverprovider.h
+       src/covermanager/opentidalcoverprovider.cpp
+       src/covermanager/opentidalcoverprovider.h
+       src/covermanager/qobuzcoverprovider.cpp
+       src/covermanager/qobuzcoverprovider.h
+       src/covermanager/spotifycoverprovider.cpp
+       src/covermanager/spotifycoverprovider.h
+       src/covermanager/musixmatchcoverprovider.cpp
+       src/covermanager/musixmatchcoverprovider.h
+       src/globalshortcuts/globalshortcutsbackend-kglobalaccel.cpp
+       src/globalshortcuts/globalshortcutsbackend-kglobalaccel.h
+       src/globalshortcuts/globalshortcutsbackend-x11.cpp
+       src/globalshortcuts/globalshortcutsbackend-x11.h
+       src/globalshortcuts/globalshortcutsbackend-win.cpp
+       src/globalshortcuts/globalshortcutsbackend-win.h
+       src/globalshortcuts/globalshortcut.cpp
+       src/globalshortcuts/globalshortcut.h
+       src/globalshortcuts/globalshortcut-x11.cpp
+       src/globalshortcuts/globalshortcut-win.cpp
+       src/globalshortcuts/keymapper_x11.h
+       src/globalshortcuts/keymapper_win.h
+       src/lyrics/*
+       src/scrobbler/*
+       src/subsonic/*
+       src/tidal/*
+       src/qobuz/*
+       src/radios/*
+       src/spotify/*
+       src/transcoder/transcoderoptionswavpack.cpp
+       src/transcoder/transcoderoptionswavpack.h
+       src/widgets/resizabletextedit.cpp
+       src/widgets/resizabletextedit.h
+       src/widgets/fancytabdata.cpp
+       src/widgets/fancytabdata.h
+Copyright: 2012-2014, 2017-2024, Jonas Kvinge <jonas@jkvinge.net>
+License: GPL-3+
+
+Files: src/engine/enginebase.cpp
+       src/engine/enginebase.h
+Copyright: 2017-2021, Jonas Kvinge <jonas@jkvinge.net>
+           2010, David Sansome <me@davidsansome.com>
+           2004, 2005, Max Howell, <max.howell@methylblue.com>
+           2003, Mark Kretschmann <markey@web.de>
+License: GPL-3+
+
+Files: src/engine/gstengine.cpp
+       src/engine/gstengine.h
+Copyright: 2017-2021, Jonas Kvinge <jonas@jkvinge.net>
+           2006, Paul Cifarelli <paul@cifarelli.net>
+           2005, Jakub Stachowski <qbast@go2.pl>
+           2003-2005, Mark Kretschmann <markey@web.de>
+License: GPL-2+
+
+Files: src/widgets/fancytabwidget.cpp
+       src/widgets/fancytabwidget.h
+       src/widgets/fancytabbar.cpp
+       src/widgets/fancytabbar.h
+Copyright: 2018, Vikram Ambrose <ambroseworks@gmail.com>
+           2018, Jonas Kvinge <jonas@jkvinge.net>
+License: GPL-3+
+
+Files: src/core/application.cpp
+       src/core/application.h
+Copyright: 2012, David Sansome <me@davidsansome.com>
+           2012, 2014, John Maguire <john.maguire@gmail.com>
+           2018-2021, Jonas Kvinge <jonas@jkvinge.net>
+License: GPL-3+
+
+Files: src/covermanager/discogscoverprovider.cpp
+       src/covermanager/discogscoverprovider.h
+Copyright: 2012, Martin Björklund <mbj4668@gmail.com>
+           2016, Jonas Kvinge <jonas@jkvinge.net>
+License: GPL-3+
+
+Files: src/core/lazy.h
+Copyright: 2016, John Maguire <john.maguire@gmail.com>
+License: GPL-3+
+
+Files: src/analyzer/fht.cpp
+       src/analyzer/fht.h
+Copyright: 2004, Melchior FRANZ <mfranz@kde.org>
+           2010, 2014, John Maguire <john.maguire@gmail.com>
+           2014, Krzysztof Sobiecki <sobkas@gmail.com>
+           2017, Santiago Gil
+License: GPL-2+
+
+Files: src/analyzer/analyzerbase.cpp
+       src/analyzer/analyzerbase.h
+Copyright: 2003-2005, Max Howell <max.howell@methylblue.com>
+           2009-2012, David Sansome <me@davidsansome.com>
+           2010, 2012, 2014, John Maguire <john.maguire@gmail.com>
+           2017, Santiago Gil
+License: GPL-2+
+
+Files: src/analyzer/blockanalyzer.cpp
+       src/analyzer/blockanalyzer.h
+Copyright: 2003-2005, Max Howell <max.howell@methylblue.com>
+           2005, Mark Kretschmann <markey@web.de>
+           2009-2010, David Sansome <davidsansome@gmail.com>
+           2010, 2014, John Maguire <john.maguire@gmail.com>
+License: GPL-2+
+
+Files: src/analyzer/boomanalyzer.cpp
+       src/analyzer/boomanalyzer.h
+Copyright: 2004, Max Howell <max.howell@methylblue.com>
+           2009-2010, David Sansome <davidsansome@gmail.com>
+           2010, 2014, John Maguire <john.maguire@gmail.com>
+           2014-2015, Mark Furneaux <mark@furneaux.ca>
+           2014, Krzysztof Sobiecki <sobkas@gmail.com>
+License: GPL-2+
+
+Files: src/analyzer/rainbowanalyzer.cpp
+       src/analyzer/rainbowanalyzer.h
+Copyright: 2011, Tyler Rhodes <tyler.s.rhodes@gmail.com>
+           2011-2012, 2014, David Sansome <me@davidsansome.com>
+           2011, 2014, John Maguire <john.maguire@gmail.com>
+           2014, Alibek Omarov <a1ba.omarov@gmail.com>
+           2014, Krzysztof Sobiecki <sobkas@gmail.com>
+           2014-2015, Mark Furneaux <mark@furneaux.ca>
+           2015, Arun Narayanankutty <n.arun.lifescience@gmail.com>
+License: GPL-2+
+
+Files: src/collection/savedgroupingmanager.*
+Copyright: 2015, Nick Lanham <nick@afternight.org>
+           2019-2021 Jonas Kvinge <jonas@jkvinge.net>
+License: GPL-3+
+
+Files: src/core/arraysize.h
+       src/core/scoped_cftyperef.h
+       src/core/scoped_nsobject.h
+       src/core/scoped_nsautorelease_pool.h
+       src/core/scoped_nsautorelease_pool.mm
+Copyright: 2010, 2011, 2014, The Chromium Authors.
+License: BSD-style
+
+Files: src/core/signalchecker.cpp
+Copyright: 2014, Krzysztof Sobiecki <sobkas@gmail.com>
+           2012, 2014, John Maguire <john.maguire@gmail.com>
+           2010, David Sansome <me@davidsansome.com>
+License: GPL-3+
+
+Files: src/device/udisks2lister.cpp
+       src/device/udisks2lister.h
+Copyright: 2016, Valeriy Malov <jazzvoid@gmail.com>
+License: GPL-3+
+
+Files: src/core/localredirectserver.cpp
+       src/core/localredirectserver.h
+Copyright: 2012, 2014, John Maguire <john.maguire@gmail.com>
+           2014, Krzysztof Sobiecki <sobkas@gmail.com>
+           2018-2021, Jonas Kvinge <jonas@jkvinge.net>
+License: GPL-3+
+
+Files: src/transcoder/transcoderoptionsopus.cpp
+       src/transcoder/transcoderoptionsopus.h
+Copyright: 2013, Martin Brodbeck <martin@brodbeck-online.de>
+License: GPL-3+
+
+Files: src/widgets/clickablelabel.cpp
+       src/widgets/clickablelabel.h
+       src/widgets/renametablineedit.cpp
+       src/widgets/renametablineedit.h
+Copyright: 2010, 2011, Andrea Decorte <adecorte@gmail.com>
+License: GPL-3+
+
+Files: src/widgets/sliderslider.cpp
+       src/widgets/sliderslider.h
+       src/widgets/prettyslider.cpp
+       src/widgets/prettyslider.h
+       src/widgets/volumeslider.cpp
+       src/widgets/volumeslider.h
+Copyright: 2018-2023, Jonas Kvinge <jonas@jkvinge.net>
+           2005, Gábor Lehel
+           2003, Mark Kretschmann <markey@web.de>
+License: GPL-2+
+
+Files: src/scrobbler/subsonicscrobbler.*
+Copyright: 2018-2021 Jonas Kvinge <jonas@jkvinge.net>
+           2020 Pascal Below <spezifisch@below.fr>
+License: GPL-3+
+
+Files: src/core/stylehelper.cpp
+       src/core/stylehelper.h
+Copyright: 2016 The Qt Company Ltd.
+License: GPL-3+
+
+Files: 3rdparty/gstfastspectrum/gstfastspectrum.cpp
+       3rdparty/gstfastspectrum/gstfastspectrum.h
+Copyright: 1999 Erik Walthinsen <omega@cse.ogi.edu>
+           2006,2011 Stefan Kost <ensonic@users.sf.net>
+           2007-2009 Sebastian Dröge <sebastian.droege@collabora.co.uk>
+           2018-2024 Jonas Kvinge <jonas@jkvinge.net>
+License: GPL-2+
+
+Files: src/widgets/qsearchfield_qt.cpp
+       src/widgets/qsearchfield_mac.mm
+       src/widgets/qsearchfield.h
+       src/widgets/qocoa_mac.h
+       src/widgets/searchfield_qt_private.cpp
+       src/widgets/searchfield_qt_private.h
+Copyright: 2011, Mike McQuaid <mike@mikemcquaid.com>
+           2018-2024, Jonas Kvinge <jonas@jkvinge.net>
+License: Expat
+
+Files: 3rdparty/kdsingleapplication/*
+Copyright: 2019-2023 Klarälvdalens Datakonsult AB, a KDAB Group company <info@kdab.com>
+License: MIT
+
+
+License: LGPL-2.1
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License can be found in the file `/usr/share/common-licenses/LGPL-2.1'.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License can be found in the file `/usr/share/common-licenses/LGPL-2.1'.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License can be found in the file /usr/share/common-licenses/GPL-2'.
+
+License: GPL-3
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License can be found in the file /usr/share/common-licenses/GPL-3'.
+
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License can be found in the file /usr/share/common-licenses/GPL-3'.
+
+License: Apache-2.0
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the license at
+  .
+     http://www.apache.org/licenses/LICENSE-2.0
+  .
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  .
+  On Debian systems, the complete text of the Apache 2.0 license can be
+  found in the file
+  `/usr/share/common-licenses/Apache-2.0`.
+
+License: BSD-3-clause
+ Copyright (c) The Regents of the University of California.
+ All rights reserved.
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. Neither the name of the University nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+License: MIT
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  .
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  .
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
+
+License: Expat
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  .
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  .
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.

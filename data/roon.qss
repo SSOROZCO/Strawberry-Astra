@@ -1,0 +1,328 @@
+/* ===================================================================
+   PALETA (referencia — QSS no soporta variables, quedan documentadas)
+   -------------------------------------------------------------------
+   bg-0      #101114   fondo más profundo (ventana principal)
+   bg-1      #16161A   sidebar / controles de reproducción
+   bg-2      #1B1C21   paneles elevados, filas alternas
+   bg-3      #202126   hover / headers
+   border    #2A2B31   líneas divisorias, 1px, sin sombras
+   text-hi   #E7E8EC   texto principal
+   text-lo   #8A8C94   texto secundario / metadata
+   accent-b  #3E63FF   azul Roon — interacción (selección, hover, foco)
+   accent-r  #C1272D   rojo Roscosmos — SOLO estado (reproduciendo, alertas)
+   mono      'JetBrains Mono','Consolas','DejaVu Sans Mono',monospace
+   =================================================================== */
+
+/* ===================================================================
+   BASE
+   =================================================================== */
+QMainWindow, QWidget {
+    background-color: #101114;
+    color: #E7E8EC;
+    font-family: 'Segoe UI', 'Ubuntu', sans-serif;
+    font-size: 12px;
+}
+
+QWidget:disabled {
+    color: #55565C;
+}
+
+/* ===================================================================
+   TABLAS / LISTAS — estética de panel de telemetría
+   =================================================================== */
+QTreeView, QListView {
+    background-color: #101114;
+    color: #D6D7DC;
+    border: 1px solid #2A2B31;
+    border-radius: 0px;
+    font-family: 'JetBrains Mono', 'Consolas', 'DejaVu Sans Mono', monospace;
+    font-size: 12px;
+    alternate-background-color: #16161A;
+    outline: 0;
+    show-decoration-selected: 1;
+}
+
+QTreeView::item, QListView::item {
+    padding: 3px 6px;
+    border: none;
+}
+
+QTreeView::item:selected, QListView::item:selected {
+    background-color: #3E63FF;
+    color: #FFFFFF;
+}
+
+QTreeView::item:hover:!selected {
+    background-color: #1B1C21;
+}
+
+/* Fila en reproducción — requiere que Strawberry marque la fila con
+   dynamic property currentTrack=true; si no lo hace, esta regla no
+   tiene efecto y no rompe nada. Es el único lugar donde usamos rojo. */
+QTreeView::item[currentTrack="true"] {
+    border-left: 3px solid #C1272D;
+    color: #FFFFFF;
+}
+
+/* Encabezados de columna — mayúsculas técnicas, sin curvas */
+QHeaderView {
+    background-color: #16161A;
+    border: none;
+}
+
+QHeaderView::section {
+    background-color: #16161A;
+    color: #8A8C94;
+    border: none;
+    border-right: 1px solid #2A2B31;
+    border-bottom: 2px solid #C1272D;
+    padding: 6px 8px;
+    font-family: 'Segoe UI', 'Ubuntu', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+QHeaderView::section:hover {
+    background-color: #1B1C21;
+    color: #E7E8EC;
+}
+
+QHeaderView::down-arrow, QHeaderView::up-arrow {
+    width: 8px;
+    height: 8px;
+}
+
+/* ===================================================================
+   SIDEBAR IZQUIERDO
+   =================================================================== */
+LeftTabBar {
+    background-image: none;
+    background-color: #16161A;
+    border: none;
+    border-right: 1px solid #2A2B31;
+}
+
+QTabBar::tab {
+    background-color: #16161A;
+    color: #6E7076;
+    border: none;
+    border-left: 3px solid transparent;
+    padding: 16px 12px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+QTabBar::tab:selected {
+    background-color: #1B1C21;
+    color: #FFFFFF;
+    border-left: 3px solid #3E63FF;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #1B1C21;
+    color: #C7C7CC;
+}
+
+/* ===================================================================
+   MENÚS
+   =================================================================== */
+QMenuBar {
+    background-color: #101114;
+    color: #C7C8CC;
+    border-bottom: 1px solid #2A2B31;
+    font-size: 12px;
+}
+
+QMenuBar::item {
+    padding: 6px 10px;
+    background: transparent;
+}
+
+QMenuBar::item:selected {
+    background-color: #3E63FF;
+    color: #FFFFFF;
+}
+
+QMenu {
+    background-color: #16161A;
+    color: #D6D7DC;
+    border: 1px solid #2A2B31;
+    border-radius: 0px;
+    padding: 2px;
+}
+
+QMenu::item {
+    padding: 6px 24px 6px 14px;
+    border-radius: 0px;
+}
+
+QMenu::item:selected {
+    background-color: #3E63FF;
+    color: #FFFFFF;
+}
+
+QMenu::separator {
+    height: 1px;
+    background: #2A2B31;
+    margin: 4px 6px;
+}
+
+/* ===================================================================
+   CONTROLES DE REPRODUCCIÓN
+   =================================================================== */
+QToolButton,
+QPushButton#play,
+QPushButton#stop,
+QPushButton#next,
+QPushButton#prev {
+    background-color: #16161A;
+    border: none;
+    border-radius: 0px;
+    padding: 8px;
+}
+
+QToolButton:hover,
+QPushButton:hover {
+    background-color: #232429;
+}
+
+QToolButton:pressed,
+QPushButton:pressed {
+    background-color: #3E63FF;
+}
+
+/* Botones de estado (shuffle/repeat activos) si el widget expone la
+   propiedad "active" — el azul indica "encendido", nunca rojo */
+QToolButton[active="true"] {
+    background-color: #24304F;
+    color: #3E63FF;
+}
+
+/* ===================================================================
+   SLIDER — progreso / volumen
+   =================================================================== */
+QSlider::groove:horizontal {
+    height: 3px;
+    background: #2A2B31;
+    border-radius: 0px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #3E63FF;
+    border-radius: 0px;
+}
+
+QSlider::handle:horizontal {
+    background: #E7E8EC;
+    width: 10px;
+    height: 10px;
+    margin: -4px 0;
+    border-radius: 0px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #3E63FF;
+}
+
+/* ===================================================================
+   SCROLLBARS — finas, sin flechas, sin cápsulas redondeadas
+   =================================================================== */
+QScrollBar:vertical {
+    background: transparent;
+    width: 8px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #2A2B31;
+    border-radius: 0px;
+    min-height: 24px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #3E63FF;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar:horizontal {
+    background: transparent;
+    height: 8px;
+    margin: 0;
+}
+
+QScrollBar::handle:horizontal {
+    background: #2A2B31;
+    border-radius: 0px;
+    min-width: 24px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #3E63FF;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+
+/* ===================================================================
+   BARRA DE ESTADO INFERIOR (conteo de tracks / duración total)
+   =================================================================== */
+QStatusBar {
+    background-color: #16161A;
+    color: #8A8C94;
+    border-top: 1px solid #2A2B31;
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 11px;
+}
+
+/* ===================================================================
+   CAMPOS DE TEXTO / BÚSQUEDA / COMBOBOX
+   =================================================================== */
+QLineEdit {
+    background-color: #16161A;
+    color: #E7E8EC;
+    border: 1px solid #2A2B31;
+    border-radius: 0px;
+    padding: 4px 6px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #3E63FF;
+}
+
+QComboBox {
+    background-color: #16161A;
+    color: #D6D7DC;
+    border: 1px solid #2A2B31;
+    border-radius: 0px;
+    padding: 3px 6px;
+}
+
+QComboBox:hover {
+    border: 1px solid #3E63FF;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #16161A;
+    color: #D6D7DC;
+    border: 1px solid #2A2B31;
+    selection-background-color: #3E63FF;
+    selection-color: #FFFFFF;
+}
+
+/* ===================================================================
+   TOOLTIPS
+   =================================================================== */
+QToolTip {
+    background-color: #1B1C21;
+    color: #E7E8EC;
+    border: 1px solid #2A2B31;
+    padding: 4px 6px;
+    border-radius: 0px;
+}

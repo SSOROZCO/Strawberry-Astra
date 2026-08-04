@@ -1,0 +1,145 @@
+/*
+ * Strawberry Music Player
+ * This file was part of Clementine.
+ * Copyright 2010, David Sansome <me@davidsansome.com>
+ * Copyright 2018-2021, Jonas Kvinge <jonas@jkvinge.net>
+ *
+ * Strawberry is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Strawberry is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Strawberry.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+#ifndef PLAYLISTCONTAINER_H
+#define PLAYLISTCONTAINER_H
+
+#include "config.h"
+
+#include <QObject>
+#include <QWidget>
+#include <QString>
+#include <QIcon>
+
+class QTimer;
+class QTimeLine;
+class QLabel;
+class QAction;
+class QEvent;
+class QKeyEvent;
+class QResizeEvent;
+
+class Playlist;
+class PlaylistManager;
+class PlaylistView;
+
+class Ui_PlaylistContainer;
+
+#include "includes/shared_ptr.h"
+
+class PlaylistContainer : public QWidget {
+  Q_OBJECT
+
+ public:
+  explicit PlaylistContainer(QWidget *parent = nullptr);
+  ~PlaylistContainer() override;
+
+  struct Actions {
+    QAction *new_playlist = nullptr;
+    QAction *load_playlist = nullptr;
+    QAction *save_playlist = nullptr;
+    QAction *clear_playlist = nullptr;
+    QAction *next_playlist = nullptr;
+    QAction *previous_playlist = nullptr;
+    QAction *last_playlist = nullptr;
+    QAction *active_playlist = nullptr;
+    QAction *close_playlist = nullptr;
+    QAction *save_all_playlists = nullptr;
+  };
+
+  void SetActions(const Actions &actions);
+  void SetManager(SharedPtr<PlaylistManager> manager);
+  void ReloadSettings();
+
+  bool SearchFieldHasFocus() const;
+  void FocusSearchField();
+
+  PlaylistView *view() const;
+
+  bool eventFilter(QObject *objectWatched, QEvent *event) override;
+
+ Q_SIGNALS:
+  void UndoRedoActionsChanged(QAction *undo, QAction *redo);
+  void ViewSelectionModelChanged();
+  void LastTabCloseRequested();
+
+ protected:
+  // QWidget
+  void resizeEvent(QResizeEvent *e) override;
+
+ private Q_SLOTS:
+  void NewPlaylist();
+  void LoadPlaylist();
+  void SaveCurrentPlaylist() { SavePlaylist(-1); }
+  void SavePlaylist(const int id);
+  void ClearPlaylist();
+  void GoToNextPlaylistTab();
+  void GoToPreviousPlaylistTab();
+  void GoToLastPlaylistTab();
+  void GoToActivePlaylistTab();
+
+  void SetViewModel(Playlist *playlist, const int scroll_position);
+  void PlaylistAdded(const int id, const QString &name, bool favorite);
+  void PlaylistClosed(const int id);
+  void PlaylistRenamed(const int id, const QString &new_name);
+
+  void Started();
+
+  void Save();
+
+  void SetTabBarVisible(const bool visible);
+  void SetTabBarHeight(const int height);
+
+  void SelectionChanged();
+  void MaybeUpdateFilter();
+  void UpdateFilter();
+  void FocusOnFilter(QKeyEvent *event);
+
+  void UpdateNoMatchesLabel();
+
+ public Q_SLOTS:
+  void ActivePlaying();
+  void ActivePaused();
+  void ActiveStopped();
+
+ private:
+  void UpdateActiveIcon(const QIcon &icon);
+  void RepositionNoMatchesLabel(bool force = false);
+
+ private:
+  Ui_PlaylistContainer *ui_;
+
+  SharedPtr<PlaylistManager> manager_;
+  QAction *undo_;
+  QAction *redo_;
+  Playlist *playlist_;
+
+  bool starting_up_;
+
+  bool tab_bar_visible_;
+  QTimeLine *tab_bar_animation_;
+
+  QLabel *no_matches_label_;
+
+  QTimer *filter_timer_;
+};
+
+#endif  // PLAYLISTCONTAINER_H

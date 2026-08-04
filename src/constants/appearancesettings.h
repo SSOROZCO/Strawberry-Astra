@@ -1,0 +1,109 @@
+/*
+ * Strawberry Music Player
+ * Copyright 2024-2026, Jonas Kvinge <jonas@jkvinge.net>
+ *
+ * Strawberry is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Strawberry is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Strawberry.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+#ifndef APPEARANCESETTINGS_H
+#define APPEARANCESETTINGS_H
+
+namespace AppearanceSettings {
+
+constexpr char kSettingsGroup[] = "Appearance";
+
+enum class BackgroundImageType {
+  Default,
+  None,
+  Custom,
+  Album,
+  Strawbs
+};
+
+enum class BackgroundImagePosition {
+  UpperLeft = 1,
+  UpperRight = 2,
+  Middle = 3,
+  BottomLeft = 4,
+  BottomRight = 5
+};
+
+constexpr char kStyle[] = "style";
+constexpr char kSystemThemeIcons[] = "system_icons";
+constexpr char kDarkMode[] = "dark_mode";
+constexpr char kUseCustomColorSet[] = "use-custom-color-set";
+
+// Per-QPalette-role custom colors (the "central roles" from https://doc.qt.io/qt-6/qpalette.html).
+constexpr char kColorWindow[] = "color-window";
+constexpr char kColorWindowText[] = "color-window-text";
+constexpr char kColorBase[] = "color-base";
+constexpr char kColorAlternateBase[] = "color-alternate-base";
+constexpr char kColorToolTipBase[] = "color-tooltip-base";
+constexpr char kColorToolTipText[] = "color-tooltip-text";
+constexpr char kColorText[] = "color-text";
+constexpr char kColorButton[] = "color-button";
+constexpr char kColorButtonText[] = "color-button-text";
+constexpr char kColorBrightText[] = "color-bright-text";
+constexpr char kColorPlaceholderText[] = "color-placeholder-text";
+
+constexpr char kTabBarSystemColor[] = "tab_system_color";
+constexpr char kTabBarGradient[] = "tab_gradient";
+constexpr char kTabBarColor[] = "tab_color";
+
+constexpr char kPlaylistPlayingSongColor[] = "playlist_playing_song_color";
+
+constexpr char kBackgroundImageType[] = "background_image_type";
+constexpr char kBackgroundImageFilename[] = "background_image_file";
+constexpr char kBackgroundImagePosition[] = "background_image_position";
+constexpr char kBackgroundImageMaxSize[] = "background_image_max_size";
+constexpr char kBackgroundImageStretch[] = "background_image_stretch";
+constexpr char kBackgroundImageDoNotCut[] = "background_image_do_not_cut";
+constexpr char kBackgroundImageKeepAspectRatio[] = "background_image_keep_aspect_ratio";
+
+constexpr char kBackgroundImageBlurRadius[] = "blur_radius";
+constexpr char kBackgroundImageOpacityLevel[] = "opacity_level";
+
+constexpr char kIconSizeTabbarSmallMode[] = "icon_size_tabbar_small_mode";
+constexpr char kIconSizeTabbarLargeMode[] = "icon_size_tabbar_large_mode";
+constexpr char kIconSizePlayControlButtons[] = "icon_size_play_control_buttons";
+constexpr char kIconSizePlaylistButtons[] = "icon_size_playlist_buttons";
+constexpr char kIconSizeLeftPanelButtons[] = "icon_size_left_panel_buttons";
+constexpr char kIconSizeConfigureButtons[] = "icon_size_configure_buttons";
+
+constexpr bool kDefaultDarkMode = false;
+constexpr bool kDefaultSystemIcons = false;
+constexpr bool kDefaultUseCustomColorSet = false;
+constexpr bool kDefaultTabBarSystemColor = false;
+constexpr bool kDefaultTabBarGradient = true;
+
+constexpr BackgroundImageType kDefaultBackgroundImageType = BackgroundImageType::Default;
+constexpr BackgroundImagePosition kDefaultBackgroundImagePosition = BackgroundImagePosition::BottomRight;
+constexpr int kDefaultBackgroundImageMaxSize = 0;
+constexpr bool kDefaultBackgroundImageStretch = false;
+constexpr bool kDefaultBackgroundImageDoNotCut = true;
+constexpr bool kDefaultBackgroundImageKeepAspectRatio = true;
+constexpr int kDefaultBackgroundImageBlurRadius = 0;
+constexpr int kDefaultBackgroundImageOpacityLevel = 40;
+
+constexpr int kDefaultIconSizeTabbarSmallMode = 32;
+constexpr int kDefaultIconSizeTabbarLargeMode = 40;
+constexpr int kDefaultIconSizePlayControlButtons = 32;
+constexpr int kDefaultIconSizePlaylistButtons = 20;
+constexpr int kDefaultIconSizeLeftPanelButtons = 22;
+constexpr int kDefaultIconSizeConfigureButtons = 20;
+
+}  // namespace AppearanceSettings
+
+#endif  // APPEARANCESETTINGS_H

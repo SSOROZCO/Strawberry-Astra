@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GroupByDialog</class>
+ <widget class="QDialog" name="GroupByDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>394</width>
+    <height>273</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Collection advanced grouping</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../data/icons.qrc">
+    <normaloff>:/icons/64x64/strawberry.png</normaloff>:/icons/64x64/strawberry.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="layout_groupbydialog">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>You can change the way the songs in the collection are organized.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Group Collection by...</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_first">
+        <property name="text">
+         <string>First level</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="combobox_first">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Artist</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Album artist</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Album</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Album - Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Format</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Genre</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Year</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Year - Album</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Year - Album - Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Original year</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Original year - Album</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Original year - Album - Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Composer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Performer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Grouping</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>File type</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sample rate</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bit depth</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bitrate</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_second">
+        <property name="text">
+         <string>Second level</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="combobox_second">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Artist</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Album artist</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Album</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Album - Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Format</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Genre</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Year</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Year - Album</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Year - Album - Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Original year</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Original year - Album</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Original year - Album - Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Composer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Performer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Grouping</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>File type</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sample rate</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bit depth</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bitrate</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_third">
+        <property name="text">
+         <string>Third level</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="combobox_third">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Artist</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Album artist</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Album</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Album - Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Format</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Genre</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Year</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Year - Album</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Year - Album - Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Original year</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Original year - Album</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Original year - Album - Disc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Composer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Performer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Grouping</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>File type</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sample rate</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bit depth</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bitrate</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_separate_albums_by_grouping">
+     <property name="text">
+      <string>Separate albums by grouping tag</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="spacer_bottom">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>11</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonbox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::Reset</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>combobox_first</tabstop>
+  <tabstop>combobox_second</tabstop>
+  <tabstop>combobox_third</tabstop>
+  <tabstop>buttonbox</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../data/data.qrc"/>
+  <include location="../../data/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonbox</sender>
+   <signal>accepted()</signal>
+   <receiver>GroupByDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonbox</sender>
+   <signal>rejected()</signal>
+   <receiver>GroupByDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,56 @@
+#ifndef CONFIG_H_IN
+#define CONFIG_H_IN
+
+#define CMAKE_BUILD_TYPE "${CMAKE_BUILD_TYPE}"
+#define CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}"
+#define CMAKE_EXECUTABLE_SUFFIX "${CMAKE_EXECUTABLE_SUFFIX}"
+
+#cmakedefine USE_INSTALL_PREFIX
+
+#cmakedefine HAVE_WINPTHREADS
+
+#cmakedefine HAVE_BACKTRACE
+#cmakedefine HAVE_ALSA
+#cmakedefine HAVE_PULSE
+#cmakedefine HAVE_GIO
+#cmakedefine HAVE_GIO_UNIX
+#cmakedefine HAVE_DBUS
+#cmakedefine HAVE_MPRIS2
+#cmakedefine HAVE_UDISKS2
+#cmakedefine HAVE_AUDIOCD
+#cmakedefine HAVE_MTP
+#cmakedefine HAVE_GPOD
+#cmakedefine HAVE_SPARKLE
+#cmakedefine HAVE_QTSPARKLE
+#cmakedefine HAVE_CHROMAPRINT
+#cmakedefine HAVE_SONGTRACKING
+#cmakedefine HAVE_TAGFETCHER
+#cmakedefine HAVE_MOODBAR
+#cmakedefine HAVE_GSTFASTSPECTRUM
+#cmakedefine HAVE_WAVEFORM
+#cmakedefine HAVE_EBUR128
+#cmakedefine HAVE_GLOBALSHORTCUTS
+#cmakedefine HAVE_X11_GLOBALSHORTCUTS
+#cmakedefine HAVE_KGLOBALACCEL_GLOBALSHORTCUTS
+#cmakedefine HAVE_STREAMTAGREADER
+#cmakedefine HAVE_SUBSONIC
+#cmakedefine HAVE_TIDAL
+#cmakedefine HAVE_SPOTIFY
+#cmakedefine HAVE_QOBUZ
+#cmakedefine HAVE_DISCORD_RPC
+
+#cmakedefine HAVE_TAGLIB_DSFFILE
+#cmakedefine HAVE_TAGLIB_DSDIFFFILE
+
+#cmakedefine USE_BUNDLE
+
+#cmakedefine HAVE_TRANSLATIONS
+#cmakedefine INSTALL_TRANSLATIONS
+#define TRANSLATIONS_DIR "${CMAKE_INSTALL_PREFIX}/share/strawberry/translations"
+
+#cmakedefine HAVE_QPA_QPLATFORMNATIVEINTERFACE
+#cmakedefine HAVE_QX11APPLICATION
+
+#cmakedefine ENABLE_WIN32_CONSOLE
+
+#endif // CONFIG_H_IN

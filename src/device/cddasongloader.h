@@ -1,0 +1,89 @@
+/*
+ * Strawberry Music Player
+ * This file was part of Clementine.
+ * Copyright 2010, David Sansome <me@davidsansome.com>
+ * Copyright 2018-2025, Jonas Kvinge <jonas@jkvinge.net>
+ *
+ * Strawberry is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Strawberry is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Strawberry.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+#ifndef CDDASONGLOADER_H
+#define CDDASONGLOADER_H
+
+#include "config.h"
+
+#include <gst/gstelement.h>
+#include <gst/audio/gstaudiocdsrc.h>
+
+#include <QObject>
+#include <QMutex>
+#include <QFuture>
+#include <QMap>
+#include <QString>
+#include <QUrl>
+
+#include "includes/shared_ptr.h"
+#include "core/song.h"
+#ifdef HAVE_TAGFETCHER
+#  include "tagfetcher/musicbrainzclient.h"
+#endif
+
+class NetworkAccessManager;
+
+class CDDASongLoader : public QObject {
+  Q_OBJECT
+
+ public:
+  explicit CDDASongLoader(const QUrl &url, QObject *parent = nullptr);
+  ~CDDASongLoader() override;
+
+  void LoadSongs();
+
+  bool IsActive() const { return loading_future_.isRunning(); }
+
+ private:
+  void LoadSongsFromCDDA();
+  void Error(const QString &error);
+  QUrl GetUrlFromTrack(const int track_number) const;
+
+ Q_SIGNALS:
+  void SongsLoaded(const SongList &songs);
+  void SongsUpdated(const SongList &songs);
+  void LoadError(const QString &error);
+  void LoadingFinished();
+  void LoadTagsFromMusicBrainz(const QString &musicbrainz_discid, const QMap<int, Song> &songs);
+
+ private Q_SLOTS:
+#ifdef HAVE_TAGFETCHER
+  void LoadTagsFromMusicBrainzSlot(const QString &musicbrainz_discid, const QMap<int, Song> &songs);
+  void LoadTagsFromMusicBrainzFinished(const QString &musicbrainz_discid, const MusicBrainzClient::ResultList &results, const QString &error);
+#endif
+
+ private:
+  const QUrl url_;
+#ifdef HAVE_TAGFETCHER
+  SharedPtr<NetworkAccessManager> network_;
+  MusicBrainzClient *musicbrainz_client_;
+#endif
+  QMutex mutex_load_;
+  QFuture<void> loading_future_;
+#ifdef HAVE_TAGFETCHER
+  QString musicbrainz_discid_;
+  QMap<int, Song> musicbrainz_songs_;
+#endif
+  bool whatever_;
+};
+
+#endif  // CDDASONGLOADER_H

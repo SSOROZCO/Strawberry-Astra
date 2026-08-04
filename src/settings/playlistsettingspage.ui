@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlaylistSettingsPage</class>
+ <widget class="QWidget" name="PlaylistSettingsPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>517</width>
+    <height>673</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Playlist</string>
+  </property>
+  <layout class="QVBoxLayout" name="layout_playlistsettingspage">
+   <item>
+    <widget class="QCheckBox" name="checkbox_alternating_row_colors">
+     <property name="text">
+      <string>Use alternating row colors</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_barscurrenttrack">
+     <property name="text">
+      <string>Show bars on the currently playing track</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_glowcurrenttrack">
+     <property name="text">
+      <string>Show a glowing animation on the currently playing track</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_warncloseplaylist">
+     <property name="text">
+      <string>Warn me when closing a playlist tab</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_continueonerror">
+     <property name="text">
+      <string>Continue to the next item in the playlist if a song is unavailable</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_greyout_songs_play">
+     <property name="text">
+      <string>Grey out unavailable songs in playlists on playback</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_greyout_songs_startup">
+     <property name="text">
+      <string>Grey out unavailable songs in playlists on startup</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_select_track">
+     <property name="text">
+      <string>Automatically select current playing track</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_show_toolbar">
+     <property name="text">
+      <string>Enable playlist toolbar</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_playlist_clear">
+     <property name="text">
+      <string>Enable playlist clear button</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_delete_files">
+     <property name="text">
+      <string>Enable delete files in the right click context menu</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_auto_sort">
+     <property name="text">
+      <string>Automatically sort playlist when inserting songs</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupbox_paths">
+     <property name="title">
+      <string>When saving a playlist, file paths should be</string>
+     </property>
+     <layout class="QVBoxLayout" name="layout_paths">
+      <item>
+       <widget class="QRadioButton" name="radiobutton_automaticpath">
+        <property name="text">
+         <string>A&amp;utomatic</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radiobutton_absolutepath">
+        <property name="text">
+         <string>Absolu&amp;te</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radiobutton_relativepath">
+        <property name="text">
+         <string>Re&amp;lative</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radiobutton_askpath">
+        <property name="text">
+         <string>As&amp;k when saving</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupbox_metadata">
+     <property name="title">
+      <string>Metadata</string>
+     </property>
+     <layout class="QVBoxLayout" name="layout_metadata">
+      <item>
+       <widget class="QCheckBox" name="checkbox_editmetadatainline">
+        <property name="toolTip">
+         <string>If activated, clicking a selected song in the playlist view will let you edit the tag value directly</string>
+        </property>
+        <property name="text">
+         <string>Enable song metadata inline edition with click</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkbox_writemetadata">
+        <property name="text">
+         <string>Write metadata when saving playlists</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="spacer_bottom">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>5</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>checkbox_barscurrenttrack</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkbox_glowcurrenttrack</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>258</x>
+     <y>55</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>258</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

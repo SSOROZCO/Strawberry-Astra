@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CollectionFilterWidget</class>
+ <widget class="QWidget" name="CollectionFilterWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>30</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Collection Filter</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="SearchField" name="search_field" native="true">
+     <property name="placeholderText" stdset="0">
+      <string>Enter search terms here</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QToolButton" name="options">
+     <property name="accessibleName">
+      <string>MenuPopupToolButton</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+     <property name="popupMode">
+      <enum>QToolButton::MenuButtonPopup</enum>
+     </property>
+     <property name="autoRaise">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <action name="filter_age_all">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Entire collection</string>
+   </property>
+  </action>
+  <action name="filter_age_today">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Added today</string>
+   </property>
+  </action>
+  <action name="filter_age_week">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Added this week</string>
+   </property>
+  </action>
+  <action name="filter_age_three_months">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Added within three months</string>
+   </property>
+   <property name="toolTip">
+    <string>Added within three months</string>
+   </property>
+  </action>
+  <action name="filter_age_year">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Added this year</string>
+   </property>
+  </action>
+  <action name="filter_age_month">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Added this month</string>
+   </property>
+  </action>
+  <action name="filter_min_rating_all">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Any rating</string>
+   </property>
+  </action>
+  <action name="filter_min_rating_non_null">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Rating non null</string>
+   </property>
+  </action>
+  <action name="filter_min_rating_20p">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Rating greater than 1 star</string>
+   </property>
+  </action>
+  <action name="filter_min_rating_40p">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Rating greater than 2 stars</string>
+   </property>
+  </action>
+  <action name="filter_min_rating_60p">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Rating greater than 3 stars</string>
+   </property>
+  </action>
+  <action name="filter_min_rating_80p">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Rating greater than 4 stars</string>
+   </property>
+  </action>
+  <action name="save_grouping">
+   <property name="text">
+    <string>Save current grouping</string>
+   </property>
+  </action>
+  <action name="manage_groupings">
+   <property name="text">
+    <string>Manage saved groupings</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SearchField</class>
+   <extends>QWidget</extends>
+   <header>widgets/searchfield.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

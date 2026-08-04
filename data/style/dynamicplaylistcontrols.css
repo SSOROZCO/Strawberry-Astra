@@ -1,0 +1,13 @@
+#container {
+  background: #1A1D20;
+  border-radius: 8px;
+  border: 1px solid #2E3236;
+}
+#label1 {
+  font-weight: bold;
+  color: #E1E2E3;
+}
+#label2 {
+  font-size: 7.5pt;
+  color: #8E9296; /* Gris ceniza para texto secundario */
+}

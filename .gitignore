@@ -1,0 +1,6 @@
+build/
+*.deb
+*.o
+pkg-strawberry/
+.DS_Store
+.vscode/

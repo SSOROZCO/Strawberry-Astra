@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ScrobblerSettingsPage</class>
+ <widget class="QWidget" name="ScrobblerSettingsPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>460</width>
+    <height>1103</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Scrobbler</string>
+  </property>
+  <layout class="QVBoxLayout" name="layout_scrobblersettingspage">
+   <item>
+    <widget class="QCheckBox" name="checkbox_enable">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Enable</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_scrobble_info">
+     <property name="text">
+      <string>Songs are scrobbled if they have valid metadata and are longer than 30 seconds, have been playing for at least half its duration or for 4 minutes (whichever occurs earlier).</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_offline">
+     <property name="toolTip">
+      <string>With this option enabled, scrobbles will be cached to disk but not sent to the server. This option can be enabled in cases where the server or the internet connection is unstable, the scrobbles will be sent when the option is disabled.</string>
+     </property>
+     <property name="text">
+      <string>Offline mode (Only cache scrobbles)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_scrobble_button">
+     <property name="text">
+      <string>Show scrobble button</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_love_button">
+     <property name="text">
+      <string>Show love button</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layout_submit">
+     <item>
+      <widget class="QLabel" name="label_submit">
+       <property name="toolTip">
+        <string>This is the delay between when a song is scrobbled and when scrobbles are submitted to the server. Setting the time to 0 seconds will submit scrobbles immediately.</string>
+       </property>
+       <property name="text">
+        <string>Submit scrobbles every</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spinbox_submit">
+       <property name="suffix">
+        <string> seconds</string>
+       </property>
+       <property name="prefix">
+        <string/>
+       </property>
+       <property name="maximum">
+        <number>900</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="spacer_submit">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_albumartist">
+     <property name="text">
+      <string>Prefer album artist when sending scrobbles</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_show_error_dialog">
+     <property name="text">
+      <string>Show dialog for errors</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkbox_strip_remastered">
+     <property name="text">
+      <string>Strip &quot;remastered&quot; and similar from album and title</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupbox_sources">
+     <property name="title">
+      <string>Enable scrobbling for the following sources:</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkbox_source_collection">
+        <property name="text">
+         <string>Collection</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="checkbox_source_subsonic">
+        <property name="text">
+         <string>Subsonic</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="checkbox_source_local">
+        <property name="text">
+         <string>Local file</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="checkbox_source_tidal">
+        <property name="text">
+         <string>Tidal</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="checkbox_source_device">
+        <property name="text">
+         <string>Device</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCheckBox" name="checkbox_source_qobuz">
+        <property name="text">
+         <string>Qobuz</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QCheckBox" name="checkbox_source_somafm">
+        <property name="text">
+         <string>SomaFM</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QCheckBox" name="checkbox_source_radioparadise">
+        <property name="text">
+         <string>Radio Paradise</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QCheckBox" name="checkbox_source_spotify">
+        <property name="text">
+         <string>Spotify</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QCheckBox" name="checkbox_source_cdda">
+        <property name="text">
+         <string>CDDA</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QCheckBox" name="checkbox_source_stream">
+        <property name="text">
+         <string>Stream</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QCheckBox" name="checkbox_source_unknown">
+        <property name="text">
+         <string>Unknown</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupbox_lastfm">
+     <property name="title">
+      <string>Last.fm</string>
+     </property>
+     <layout class="QVBoxLayout" name="layout_lastfm">
+      <item>
+       <widget class="QCheckBox" name="checkbox_lastfm_enable">
+        <property name="text">
+         <string>Enable</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="LoginStateWidget" name="widget_lastfm_login_state" native="true"/>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_lastfm_login" native="true">
+        <layout class="QVBoxLayout" name="layout_lastfm_login">
+         <item>
+          <layout class="QHBoxLayout" name="layout_lastfm_button_login">
+           <item>
+            <widget class="QPushButton" name="button_lastfm_login">
+             <property name="text">
+              <string>Login</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="spacer_lastfm_login">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupbox_listenbrainz">
+     <property name="title">
+      <string>Listenbrainz</string>
+     </property>
+     <layout class="QVBoxLayout" name="layout_listenbrainz">
+      <item>
+       <widget class="QCheckBox" name="checkbox_listenbrainz_enable">
+        <property name="text">
+         <string>Enable</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="layout_listenbrainz_user_token">
+        <item>
+         <widget class="QLabel" name="label_listenbrainz_user_token">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>User token:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineedit_listenbrainz_user_token"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_listenbrainz_token">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="openExternalLinks">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="LoginStateWidget" name="widget_listenbrainz_login_state" native="true"/>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_listenbrainz_login" native="true">
+        <layout class="QVBoxLayout" name="layout_listenbrainz_login">
+         <item>
+          <layout class="QHBoxLayout" name="layout_listenbrainz_button_login">
+           <item>
+            <widget class="QPushButton" name="button_listenbrainz_login">
+             <property name="text">
+              <string>Login</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="spacer_listenbrainz_login">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="spacer_bottom">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>LoginStateWidget</class>
+   <extends>QWidget</extends>
+   <header>widgets/loginstatewidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>checkbox_enable</tabstop>
+  <tabstop>checkbox_offline</tabstop>
+  <tabstop>checkbox_scrobble_button</tabstop>
+  <tabstop>checkbox_love_button</tabstop>
+  <tabstop>spinbox_submit</tabstop>
+  <tabstop>checkbox_albumartist</tabstop>
+  <tabstop>checkbox_show_error_dialog</tabstop>
+  <tabstop>checkbox_strip_remastered</tabstop>
+  <tabstop>checkbox_source_collection</tabstop>
+  <tabstop>checkbox_source_local</tabstop>
+  <tabstop>checkbox_source_device</tabstop>
+  <tabstop>checkbox_source_cdda</tabstop>
+  <tabstop>checkbox_source_stream</tabstop>
+  <tabstop>checkbox_source_unknown</tabstop>
+  <tabstop>checkbox_source_subsonic</tabstop>
+  <tabstop>checkbox_source_tidal</tabstop>
+  <tabstop>checkbox_source_qobuz</tabstop>
+  <tabstop>checkbox_source_spotify</tabstop>
+  <tabstop>checkbox_source_somafm</tabstop>
+  <tabstop>checkbox_source_radioparadise</tabstop>
+  <tabstop>checkbox_lastfm_enable</tabstop>
+  <tabstop>button_lastfm_login</tabstop>
+  <tabstop>checkbox_listenbrainz_enable</tabstop>
+  <tabstop>lineedit_listenbrainz_user_token</tabstop>
+  <tabstop>button_listenbrainz_login</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
