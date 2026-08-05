@@ -3,3 +3,5 @@ build/
 pkg-strawberry/
 CMakeCache.txt
 .DS_Store
+*.AppImage
+appdir/
